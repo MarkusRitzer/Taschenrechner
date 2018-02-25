@@ -18,13 +18,13 @@ namespace Taschenrechner1
 
             //Wandel Text in Zahl
             double ersterSummandalsZahl = Convert.ToDouble(ersterSummand);
-            int zweiterSummandalsZahl = Convert.ToDouble(zweiterSummand);
+            double zweiterSummandalsZahl = Convert.ToDouble(zweiterSummand);
 
             //Summe bilden
             double Summe = ersterSummandalsZahl + zweiterSummandalsZahl;
 
             //Ausgabe
-            Console.WriteLine("Die Summe aus {1} und {2} ist: {0}", Summe, ersterSummand, zweiterSummand);
+            Console.WriteLine("Die Summe aus {1} und {2} ist: {0:F}", Summe, ersterSummand, zweiterSummand);
             Console.ReadLine();
 
         }
