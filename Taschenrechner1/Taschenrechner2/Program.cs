@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Taschenrechner1
 {
-    class Program
+    class   Program
     {
         static void Main(string[] args)
         {
