@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{9229012D-B959-4DA2-AF50-EED601DCC0C0}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Taschenrechner1</RootNamespace>
-    <AssemblyName>Taschenrechner1</AssemblyName>
+    <RootNamespace>Taschenrechner</RootNamespace>
+    <AssemblyName>Taschenrechner</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
