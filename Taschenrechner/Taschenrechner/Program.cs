@@ -21,11 +21,19 @@ namespace Taschenrechner
             double zweiterSummandalsZahl = Convert.ToDouble(zweiterSummand);
 
             //Summe bilden
-            double Summe = ersterSummandalsZahl + zweiterSummandalsZahl;
+            double Summe = Addiere(ersterSummandalsZahl,zweiterSummandalsZahl);
 
             //Ausgabe
             Console.WriteLine("Die Summe aus {1} und {2} ist: {0:F}", Summe, ersterSummand, zweiterSummand);
             WarteaufBenutzerEingabe();
+        }
+
+        static double Addiere(double ErsterSummand, double zweiterSummand)
+        {
+            double Summe = ErsterSummand + zweiterSummand;
+
+            return Summe;
+
         }
 
         static void WarteaufBenutzerEingabe()
