@@ -25,8 +25,13 @@ namespace Taschenrechner
 
             //Ausgabe
             Console.WriteLine("Die Summe aus {1} und {2} ist: {0:F}", Summe, ersterSummand, zweiterSummand);
-            Console.ReadLine();
+            WarteaufBenutzerEingabe();
+        }
 
+        static void WarteaufBenutzerEingabe()
+        {
+            Console.WriteLine("Zum Beenden bitte RETURN drücken");
+            Console.ReadLine();
         }
     }
 }
