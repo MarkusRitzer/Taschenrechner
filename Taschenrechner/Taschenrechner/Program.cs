@@ -13,9 +13,9 @@ namespace Taschenrechner
         {
             // User Story: Als Benutzer möchte ich zwei Zahlen eingeben und die Summe berechenen lassen
             // Beide Summanden einlesen
-            string ersteZahlalsString= Benutzereingabe("Gib bitte die erste Zahl ein: ");
-            string zweiteZahlalsString = Benutzereingabe("Gib bitte die zweite Zahl ein: ");
-
+            string ersteZahlalsString= HoleBenutzereingabe("Gib bitte die erste Zahl ein: ");
+            string zweiteZahlalsString = HoleBenutzereingabe("Gib bitte die zweite Zahl ein: ");
+            char auswahl=BenutzerAuswahl();
             //Wandel Text in Zahl
             //TODO: Auslagern wenn Struktur umfangreicher geworden ist
             double ersteZahl = Convert.ToDouble(ersteZahlalsString);
@@ -26,7 +26,7 @@ namespace Taschenrechner
 
             //Ausgabe
             Console.WriteLine("Die Summe aus {1} und {2} ist: {0:F}", Summe, ersteZahl, zweiteZahl);
-            WarteaufBenutzerEingabe();
+            HoleBenutzereingabe("Zum Beenden bitte RETURN drücken");
         }
 
         static double Addiere(double ErsterSummand, double zweiterSummand)
@@ -44,13 +44,17 @@ namespace Taschenrechner
 
         }
 
-        static void WarteaufBenutzerEingabe()
+        static char BenutzerAuswahl()
         {
-            Console.WriteLine("Zum Beenden bitte RETURN drücken");
-            Console.ReadLine();
+            Console.WriteLine("Bitte Auswählen ob Summe oder Differenz gebildet wird (+ oder -):");
+            string eingabe = Console.ReadLine();
+            char zeichen= Convert.ToChar(eingabe);
+            return zeichen;
+            
         }
 
-        static string Benutzereingabe(string ausgabeText)
+
+        static string HoleBenutzereingabe(string ausgabeText)
         {
             Console.Write(ausgabeText);
             string eingabe= Console.ReadLine();
@@ -60,3 +64,4 @@ namespace Taschenrechner
 
     }
 }
+
