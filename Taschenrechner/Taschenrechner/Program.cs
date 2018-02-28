@@ -15,17 +15,31 @@ namespace Taschenrechner
             // Beide Summanden einlesen
             string ersteZahlalsString= HoleBenutzereingabe("Gib bitte die erste Zahl ein: ");
             string zweiteZahlalsString = HoleBenutzereingabe("Gib bitte die zweite Zahl ein: ");
-            char auswahl=BenutzerAuswahl();
+            string operation=HoleBenutzerauswahl("Bitte wähle die Rechenoperation aus (+ oder -):");
             //Wandel Text in Zahl
             //TODO: Auslagern wenn Struktur umfangreicher geworden ist
             double ersteZahl = Convert.ToDouble(ersteZahlalsString);
             double zweiteZahl = Convert.ToDouble(zweiteZahlalsString);
 
-            //Summe bilden
-            double Summe = Addiere(ersteZahl,zweiteZahl);
+            double resultat = 0;
 
-            //Ausgabe
-            Console.WriteLine("Die Summe aus {1} und {2} ist: {0:F}", Summe, ersteZahl, zweiteZahl);
+            switch (operation)
+            {
+                case ("+"):
+                    //Summe bilden
+                    resultat = Addiere(ersteZahl, zweiteZahl);
+                    Console.WriteLine("Die Summe aus {0} und {1} ist: {2}", ersteZahl, zweiteZahl, resultat);
+                    break;
+                case ("-"):
+                    //Differenz bilden
+                    resultat = Subtrahiere(ersteZahl, zweiteZahl);
+                    Console.WriteLine("Die Differenz aus {0} und {1} ist: {2}", ersteZahl, zweiteZahl, resultat);
+                    break;
+                default:
+                    Console.WriteLine("Du hast eine ungültige Auswahl getroffen!");
+                    break;
+            }
+            
             HoleBenutzereingabe("Zum Beenden bitte RETURN drücken");
         }
 
@@ -44,12 +58,11 @@ namespace Taschenrechner
 
         }
 
-        static char BenutzerAuswahl()
+        static string HoleBenutzerauswahl(string auswahltext)
         {
-            Console.WriteLine("Bitte Auswählen ob Summe oder Differenz gebildet wird (+ oder -):");
+            Console.WriteLine(auswahltext);
             string eingabe = Console.ReadLine();
-            char zeichen= Convert.ToChar(eingabe);
-            return zeichen;
+            return eingabe;
             
         }
 
