@@ -15,7 +15,7 @@ namespace Taschenrechner
             // Beide Summanden einlesen
             string ersteZahlalsString= HoleBenutzereingabe("Gib bitte die erste Zahl ein: ");
             string zweiteZahlalsString = HoleBenutzereingabe("Gib bitte die zweite Zahl ein: ");
-            string operation=HoleBenutzerauswahl("Bitte wähle die Rechenoperation aus (+ oder -):");
+            string operation=HoleBenutzerauswahl("Bitte wähle die Rechenoperation aus (+, -, * oder /):");
             //Wandel Text in Zahl
             //TODO: Auslagern wenn Struktur umfangreicher geworden ist
             double ersteZahl = Convert.ToDouble(ersteZahlalsString);
@@ -35,8 +35,20 @@ namespace Taschenrechner
                     resultat = Subtrahiere(ersteZahl, zweiteZahl);
                     Console.WriteLine("Die Differenz aus {0} und {1} ist: {2}", ersteZahl, zweiteZahl, resultat);
                     break;
+
+                case ("/"):
+                    resultat = Dividiere(ersteZahl, zweiteZahl);
+                    Console.WriteLine("Der Quotient aus {0} und {1} ist: {2}", ersteZahl, zweiteZahl, resultat);
+                    break;
+
+
+                case ("*"):
+                    resultat = Multipliziere(ersteZahl, zweiteZahl);
+                    Console.WriteLine("Das Produkt aus {0} und {1} ist: {2}", ersteZahl, zweiteZahl, resultat);
+                    break;
                 default:
                     Console.WriteLine("Du hast eine ungültige Auswahl getroffen!");
+                    Console.Beep();
                     break;
             }
             
@@ -57,6 +69,19 @@ namespace Taschenrechner
             return subraktion;
 
         }
+
+        static double Multipliziere(double faktoreins, double faktorzwei)
+        {
+            double produkt = faktoreins*faktorzwei;
+            return produkt;
+        }
+
+        static double Dividiere(double dividend, double divisor)
+        {
+            double quotient = dividend / divisor;
+            return quotient;
+        }
+
 
         static string HoleBenutzerauswahl(string auswahltext)
         {
